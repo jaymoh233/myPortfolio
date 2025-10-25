@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleek Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      /* Define color variables */
+      :root {
+        /* DARK MODE (Default) */
+        --clr-primary: #3b82f6; /* Blue 500 */
+        --clr-secondary: #f59e0b; /* Amber 500 */
+        --bg-base: #0f172a; /* Slate 900 (Body, Header, Footer) */
+        --bg-card: #1e293b; /* Slate 800 (Cards, Hover) */
+        --text-default: #f1f5f9; /* Slate 100 (Primary text) */
+        --text-muted: #94a3b8; /* Slate 400 (Secondary text) */
+        --border-color: #334155; /* Slate 700 (Borders) */
+      }
+
+      /* LIGHT MODE OVERRIDES */
+      html[data-theme="light"] {
+        --clr-primary: #1e40af; /* Blue 700 */
+        --clr-secondary: #d97706; /* Amber 700 */
+        --bg-base: #f1f5f9; /* Slate 100 (Body, Header, Footer) */
+        --bg-card: #ffffff; /* White (Cards, Hover) */
+        --text-default: #1e293b; /* Slate 800 (Primary text) */
+        --text-muted: #475569; /* Slate 600 (Secondary text) */
+        --border-color: #e2e8f0; /* Slate 200 (Borders) */
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-base);
+        color: var(--text-default);
+        overflow-x: hidden;
+        /* Smooth transition for theme change */
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Apply variables to header/footer for background and border */
+      header {
+        background-color: var(--bg-base);
+        border-color: var(--border-color);
+      }
+
+      /* Apply variables to card backgrounds */
+      .bg-card {
+        background-color: var(--bg-card);
+      }
+      .bg-card-hover:hover {
+        background-color: color-mix(
+          in srgb,
+          var(--bg-card) 90%,
+          var(--bg-base)
+        );
+      }
+
+      /* Apply variables to text/icon colors */
+      .text-primary-color {
+        color: var(--clr-primary);
+      }
+      .text-secondary-color {
+        color: var(--clr-secondary);
+      }
+      .text-default-color {
+        color: var(--text-default);
+      }
+      .text-muted-color {
+        color: var(--text-muted);
+      }
+      .border-primary-color {
+        border-color: var(--clr-primary);
+      }
+
+      /* Custom scroll-in animation utility */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        transition-delay: 0.1s;
+        will-change: opacity, transform;
+      }
+
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Profile Image Sharpening */
+      .profile-img {
+        image-rendering: -webkit-optimize-contrast; /* For Chrome/Safari */
+        image-rendering: crisp-edges; /* Modern browsers, though often used for pixel art */
+      }
+
+      /* Project Card Hover Effect */
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -2px rgba(0, 0, 0, 0.06); /* subtle initial shadow */
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px var(--clr-primary),
+          0 4px 6px -2px var(--clr-primary); /* Enhanced shadow with primary color tint */
+      }
+
+      /* Theme Icon Toggle CSS */
+      /* Hide moon icon in dark mode (default) and show sun icon */
+      .theme-icon-sun {
+        display: block;
+      }
+      .theme-icon-moon {
+        display: none;
+      }
+
+      /* In light mode, hide sun icon and show moon icon */
+      html[data-theme="light"] .theme-icon-sun {
+        display: none;
+      }
+      html[data-theme="light"] .theme-icon-moon {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Header & Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-base/95 backdrop-blur-md border-b border-[var(--border-color)] shadow-lg transition-colors duration-300"
+    >
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a
+            href="#about"
+            class="text-2xl font-extrabold tracking-tight text-default-color transition duration-300 hover:text-primary-color"
+          >
+            [Your Name]
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-4">
+            <a
+              href="#about"
+              class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
+              >Projects</a
+            >
+            <a
+              href="#testimonials"
+              class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
+              >Testimonials</a
+            >
+            <a
+              href="#contact"
+              class="text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium transition shadow-md"
+              >Contact</a
+            >
+
+            <!-- Theme Toggle Button (Desktop) --><button
+              id="theme-toggle"
+              class="p-2 rounded-full text-muted-color hover:text-default-color hover:bg-card transition duration-300"
+            >
+              <i data-lucide="sun" class="w-5 h-5 theme-icon-sun"></i>
+              <i data-lucide="moon" class="w-5 h-5 theme-icon-moon"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button and Toggle -->
+          <div class="flex items-center md:hidden">
+            <!-- Theme Toggle Button (Mobile) --><button
+              id="theme-toggle-mobile"
+              class="p-2 rounded-full text-muted-color hover:text-default-color transition duration-300 mr-2"
+            >
+              <i data-lucide="sun" class="w-6 h-6 theme-icon-sun"></i>
+              <i data-lucide="moon" class="w-6 h-6 theme-icon-moon"></i>
+            </button>
+            <!-- Mobile Menu Button --><button
+              id="mobile-menu-button"
+              type="button"
+              class="text-muted-color hover:text-default-color focus:outline-none transition"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu (Hidden by default) -->
+      <div class="hidden md:hidden bg-base" id="mobile-menu">
+        <div
+          class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[var(--border-color)]"
+        >
+          <a
+            href="#about"
+            class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
+            >About</a
+          >
+          <a
+            href="#skills"
+            class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
+            >Projects</a
+          >
+          <a
+            href="#testimonials"
+            class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
+            >Testimonials</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main
+      class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 py-12 space-y-24 md:space-y-32"
+    >
+      <!-- 1. About Me / Hero Section -->
+      <section id="about" class="pt-24 pb-20 fade-in-section">
+        <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+          <div class="md:w-1/2 order-2 md:order-1 text-center md:text-left">
+            <p class="text-primary-color font-semibold mb-2">Hello, I'm</p>
+            <h1
+              class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tighter text-default-color mb-6"
+            >
+              Alex Thompson
+            </h1>
+            <p class="text-xl text-muted-color mb-8 max-w-xl">
+              A passionate
+              <span class="text-secondary-color">Full-Stack Developer</span>
+              focused on building exceptional digital experiences. I specialize
+              in turning complex problems into elegant, user-friendly solutions.
+            </p>
+            <a
+              href="#projects"
+              class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-lg shadow-blue-500/50"
+            >
+              View Projects
+            </a>
+          </div>
+          <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
+            <!-- Your personal photo will go here, properly styled -->
+            <div
+              class="w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-card flex items-center justify-center shadow-2xl shadow-blue-500/30"
+            >
+              <img
+                src="img/medd.JPG"
+                alt="Your Name - Developer"
+                class="object-cover object-top w-full h-full profile-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Skills Section -->
+      <section id="skills" class="py-16 fade-in-section">
+        <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
+          My Expertise
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+          <!-- Skill Card 1: HTML/CSS -->
+          <div
+            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+          >
+            <i
+              data-lucide="layout-grid"
+              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:rotate-12 transition duration-500"
+            ></i>
+            <p class="font-semibold text-default-color">HTML/CSS</p>
+            <p class="text-sm text-muted-color">Structure & Style</p>
+          </div>
+
+          <!-- Skill Card 2: JavaScript -->
+          <div
+            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+          >
+            <i
+              data-lucide="code"
+              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:rotate-12 transition duration-500"
+            ></i>
+            <p class="font-semibold text-default-color">JavaScript</p>
+            <p class="text-sm text-muted-color">Core Logic</p>
+          </div>
+
+          <!-- Skill Card 3: React -->
+          <div
+            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+          >
+            <i
+              data-lucide="atom"
+              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-spin"
+            ></i>
+            <p class="font-semibold text-default-color">React/Vue</p>
+            <p class="text-sm text-muted-color">Frontend Frameworks</p>
+          </div>
+
+          <!-- Skill Card 4: Node.js -->
+          <div
+            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+          >
+            <i
+              data-lucide="server"
+              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:scale-110 transition duration-500"
+            ></i>
+            <p class="font-semibold text-default-color">Node.js</p>
+            <p class="text-sm text-muted-color">Backend Runtime</p>
+          </div>
+
+          <!-- Skill Card 5: Databases -->
+          <div
+            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+          >
+            <i
+              data-lucide="database"
+              class="w-8 h-8 mx-auto mb-3 text-secondary-color"
+            ></i>
+            <p class="font-semibold text-default-color">PostgreSQL</p>
+            <p class="text-sm text-muted-color">Data Management</p>
+          </div>
+
+          <!-- Skill Card 6: Cloud -->
+          <div
+            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+          >
+            <i
+              data-lucide="cloud"
+              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-pulse"
+            ></i>
+            <p class="font-semibold text-default-color">AWS/Azure</p>
+            <p class="text-sm text-muted-color">Cloud Hosting</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Projects Section -->
+      <section id="projects" class="py-16 fade-in-section">
+        <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
+          Recent Projects
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="project-card bg-card p-6 rounded-xl shadow-xl transition duration-300 ease-in-out"
+          >
+            <div class="h-40 mb-4 rounded-lg overflow-hidden">
+              <!-- Replace src with your actual project screenshot URL --><img
+                src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+1"
+                alt="SaaS Platform Rebuild"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-default-color">
+              SaaS Platform Rebuild
+            </h3>
+            <p class="text-muted-color mb-4 text-sm">
+              A complete modernization of a legacy subscription service using
+              React and Node.js, resulting in a 40% performance increase.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >React</span
+              >
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >Node.js</span
+              >
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >Tailwind CSS</span
+              >
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="project-card bg-card p-6 rounded-xl shadow-xl transition duration-300 ease-in-out"
+          >
+            <div class="h-40 mb-4 rounded-lg overflow-hidden">
+              <!-- Replace src with your actual project screenshot URL --><img
+                src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+2"
+                alt="Data Visualization Dashboard"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-default-color">
+              Data Visualization Dashboard
+            </h3>
+            <p class="text-muted-color mb-4 text-sm">
+              Developed a real-time analytics dashboard for marketing teams,
+              featuring custom D3.js charts and a responsive Angular frontend.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >Angular</span
+              >
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >D3.js</span
+              >
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >TypeScript</span
+              >
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div
+            class="project-card bg-card p-6 rounded-xl shadow-xl transition duration-300 ease-in-out"
+          >
+            <div class="h-40 mb-4 rounded-lg overflow-hidden">
+              <!-- Replace src with your actual project screenshot URL --><img
+                src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+3"
+                alt="E-commerce Microservice"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <h3 class="text-xl font-bold mb-2 text-default-color">
+              E-commerce Microservice
+            </h3>
+            <p class="text-muted-color mb-4 text-sm">
+              Designed and implemented a scalable cart and checkout microservice
+              using Python and Flask with Kubernetes deployment.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >Python</span
+              >
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >Flask</span
+              >
+              <span
+                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                >Kubernetes</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Testimonials Section -->
+      <section id="testimonials" class="py-16 fade-in-section">
+        <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
+          What People Say
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-card p-8 rounded-xl shadow-xl border-t-4 border-secondary-color"
+          >
+            <p class="text-xl italic text-muted-color mb-4 leading-relaxed">
+              "Alex's ability to simplify complex technical challenges is
+              unmatched. The project was delivered ahead of schedule and
+              exceeded all performance metrics."
+            </p>
+            <div class="font-semibold text-default-color">
+              - Jane Doe, CTO at Innovatech
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-card p-8 rounded-xl shadow-xl border-t-4 border-secondary-color"
+          >
+            <p class="text-xl italic text-muted-color mb-4 leading-relaxed">
+              "The user interface he designed was intuitive and beautiful. He
+              truly understands modern web aesthetics and accessibility."
+            </p>
+            <div class="font-semibold text-default-color">
+              - Mark Chen, Lead UX Designer
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 5. Footer / Contact Info -->
+    <footer
+      id="contact"
+      class="bg-base border-t border-[var(--border-color)] py-12 fade-in-section"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
+        >
+          <!-- Contact Heading -->
+          <div>
+            <h3 class="text-2xl font-extrabold text-primary-color mb-4">
+              Get In Touch
+            </h3>
+            <p class="text-muted-color">
+              Ready to start a project? Send me a message!
+            </p>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-center md:justify-start">
+              <i
+                data-lucide="mail"
+                class="w-5 h-5 text-secondary-color mr-3"
+              ></i>
+              <a
+                href="mailto:alex.thompson@example.com"
+                class="text-muted-color hover:text-default-color transition"
+                >alex.thompson@example.com</a
+              >
+            </div>
+            <div class="flex items-center justify-center md:justify-start">
+              <i
+                data-lucide="phone"
+                class="w-5 h-5 text-secondary-color mr-3"
+              ></i>
+              <a
+                href="tel:+1234567890"
+                class="text-muted-color hover:text-default-color transition"
+                >(123) 456-7890</a
+              >
+            </div>
+            <div class="flex items-center justify-center md:justify-start">
+              <i
+                data-lucide="map-pin"
+                class="w-5 h-5 text-secondary-color mr-3"
+              ></i>
+              <p class="text-muted-color">San Francisco, CA</p>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex justify-center md:justify-end space-x-6">
+            <a
+              href="#"
+              class="text-muted-color hover:text-primary-color transition transform hover:scale-110"
+            >
+              <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="#"
+              class="text-muted-color hover:text-primary-color transition transform hover:scale-110"
+            >
+              <i data-lucide="github" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="#"
+              class="text-muted-color hover:text-primary-color transition transform hover:scale-110"
+            >
+              <i data-lucide="twitter" class="w-6 h-6"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="text-center mt-8 pt-6 border-t border-[var(--border-color)] text-sm text-muted-color"
+        >
+          &copy; <span id="year"></span> Alex Thompson. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Theme Toggle, Mobile Menu, Icons, Footer Year, and Scroll Animations -->
+    <script>
+      // Theme Toggle Logic
+      const htmlElement = document.documentElement;
+
+      const setTheme = (theme) => {
+        htmlElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+      };
+
+      const toggleTheme = () => {
+        const currentTheme = htmlElement.getAttribute("data-theme") || "dark"; // Default to dark if not set
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        setTheme(newTheme);
+      };
+
+      // Initialize Theme on Load
+      const storedTheme = localStorage.getItem("theme");
+      // Check for system preference only if no theme is stored
+      const systemPrefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      // Determine initial theme
+      let initialTheme = "dark";
+      if (storedTheme) {
+        initialTheme = storedTheme;
+      } else if (!systemPrefersDark) {
+        initialTheme = "light"; // Default to light if system prefers light and no stored theme
+      }
+
+      // Set initial theme before running lucide.createIcons()
+      setTheme(initialTheme);
+
+      // Initialize Lucide Icons (Must be called after theme is set for correct icon visibility)
+      lucide.createIcons();
+
+      // Add event listeners
+      document
+        .getElementById("theme-toggle")
+        ?.addEventListener("click", toggleTheme);
+      document
+        .getElementById("theme-toggle-mobile")
+        ?.addEventListener("click", toggleTheme);
+
+      // Footer Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        const isExpanded =
+          mobileMenuButton.getAttribute("aria-expanded") === "true" || false;
+        mobileMenuButton.setAttribute("aria-expanded", !isExpanded);
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu on link click
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Scroll Animation Logic (Intersection Observer)
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // If the element is visible, add the 'is-visible' class
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              // Stop observing once it's visible to save resources
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          // Options: start observing when 15% of the element is visible
+          threshold: 0.15,
+        }
+      );
+
+      // Target all sections that need the fade-in animation
+      document.querySelectorAll(".fade-in-section").forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Smooth Scroll Logic (Fallback/Enhancement)
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          // Offset calculation for fixed header height (64px = h-16)
+          const headerHeight = 64;
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
