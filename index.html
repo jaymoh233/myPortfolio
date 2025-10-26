@@ -242,7 +242,7 @@
       class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 py-12 space-y-24 md:space-y-32"
     >
       <!-- 1. About Me / Hero Section -->
-      <section id="about" class="pt-24 pb-20 fade-in-section">
+      <section id="about" class="pt-10 md:pt-10 pb-20 fade-in-section">
         <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           <div class="md:w-1/2 order-2 md:order-1 text-center md:text-left">
             <p class="text-primary-color font-semibold mb-2">Hello, I'm</p>
@@ -264,15 +264,16 @@
               View Projects
             </a>
           </div>
+
           <div class="md:w-1/2 order-1 md:order-2 flex justify-center">
-            <!-- Your personal photo will go here, properly styled -->
+            <!-- Slightly smaller image on all screens -->
             <div
-              class="w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-card flex items-center justify-center shadow-2xl shadow-blue-500/30"
+              class="w-[80%] sm:w-[75%] md:w-[65%] lg:w-[60%] overflow-hidden rounded-2xl bg-card shadow-2xl shadow-blue-500/30"
             >
               <img
-                src="img/medd.JPG"
-                alt="Your Name - Developer"
-                class="object-cover object-top w-full h-full profile-img"
+                src="img/medddd.jpg"
+                alt="Alex Thompson - Developer"
+                class="object-cover w-full h-auto"
               />
             </div>
           </div>
@@ -361,147 +362,184 @@
       </section>
 
       <!-- 3. Projects Section -->
-      <section id="projects" class="py-16 fade-in-section">
+      <section id="projects" class="py-16 fade-in-section relative">
         <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
           Recent Projects
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Project Card 1 -->
+        <div class="relative max-w-7xl mx-auto">
+          <!-- Carousel Wrapper -->
           <div
-            class="project-card bg-card p-6 rounded-xl shadow-xl transition duration-300 ease-in-out"
+            id="projects-carousel"
+            class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-4"
           >
-            <div class="h-40 mb-4 rounded-lg overflow-hidden">
-              <!-- Replace src with your actual project screenshot URL --><img
-                src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+1"
-                alt="SaaS Platform Rebuild"
-                class="object-cover w-full h-full"
-              />
+            <!-- Project Card 1 -->
+            <div
+              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
+            >
+              <div class="h-48 mb-4 rounded-lg overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+1"
+                  alt="SaaS Platform Rebuild"
+                  class="object-cover w-full h-full"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-default-color">
+                SaaS Platform Rebuild
+              </h3>
+              <p class="text-muted-color mb-4 text-sm">
+                Modernized a legacy subscription service using React and
+                Node.js, boosting performance by 40%.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >Node.js</span
+                >
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >Tailwind CSS</span
+                >
+              </div>
             </div>
-            <h3 class="text-xl font-bold mb-2 text-default-color">
-              SaaS Platform Rebuild
-            </h3>
-            <p class="text-muted-color mb-4 text-sm">
-              A complete modernization of a legacy subscription service using
-              React and Node.js, resulting in a 40% performance increase.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >React</span
-              >
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >Node.js</span
-              >
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >Tailwind CSS</span
-              >
+
+            <!-- Project Card 2 -->
+            <div
+              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
+            >
+              <div class="h-48 mb-4 rounded-lg overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+2"
+                  alt="Data Visualization Dashboard"
+                  class="object-cover w-full h-full"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-default-color">
+                Data Visualization Dashboard
+              </h3>
+              <p class="text-muted-color mb-4 text-sm">
+                Built a real-time analytics dashboard with D3.js charts and a
+                responsive Angular frontend.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >Angular</span
+                >
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >D3.js</span
+                >
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >TypeScript</span
+                >
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div
+              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
+            >
+              <div class="h-48 mb-4 rounded-lg overflow-hidden">
+                <img
+                  src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+3"
+                  alt="E-commerce Microservice"
+                  class="object-cover w-full h-full"
+                />
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-default-color">
+                E-commerce Microservice
+              </h3>
+              <p class="text-muted-color mb-4 text-sm">
+                Scalable cart and checkout microservice using Flask and
+                Kubernetes.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >Flask</span
+                >
+                <span
+                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
+                  >Kubernetes</span
+                >
+              </div>
             </div>
           </div>
 
-          <!-- Project Card 2 -->
-          <div
-            class="project-card bg-card p-6 rounded-xl shadow-xl transition duration-300 ease-in-out"
+          <!-- Navigation Buttons (Desktop only) -->
+          <button
+            id="prevBtn"
+            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg transition"
           >
-            <div class="h-40 mb-4 rounded-lg overflow-hidden">
-              <!-- Replace src with your actual project screenshot URL --><img
-                src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+2"
-                alt="Data Visualization Dashboard"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-default-color">
-              Data Visualization Dashboard
-            </h3>
-            <p class="text-muted-color mb-4 text-sm">
-              Developed a real-time analytics dashboard for marketing teams,
-              featuring custom D3.js charts and a responsive Angular frontend.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >Angular</span
-              >
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >D3.js</span
-              >
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >TypeScript</span
-              >
-            </div>
-          </div>
-
-          <!-- Project Card 3 -->
-          <div
-            class="project-card bg-card p-6 rounded-xl shadow-xl transition duration-300 ease-in-out"
+            ❮
+          </button>
+          <button
+            id="nextBtn"
+            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg transition"
           >
-            <div class="h-40 mb-4 rounded-lg overflow-hidden">
-              <!-- Replace src with your actual project screenshot URL --><img
-                src="https://via.placeholder.com/300x160/1e293b/f1f5f9?text=App+Screenshot+3"
-                alt="E-commerce Microservice"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-default-color">
-              E-commerce Microservice
-            </h3>
-            <p class="text-muted-color mb-4 text-sm">
-              Designed and implemented a scalable cart and checkout microservice
-              using Python and Flask with Kubernetes deployment.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >Python</span
-              >
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >Flask</span
-              >
-              <span
-                class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                >Kubernetes</span
-              >
-            </div>
-          </div>
+            ❯
+          </button>
         </div>
       </section>
-
       <!-- 4. Testimonials Section -->
       <section id="testimonials" class="py-16 fade-in-section">
         <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
           What People Say
         </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0"
+        >
           <!-- Testimonial 1 -->
           <div
-            class="bg-card p-8 rounded-xl shadow-xl border-t-4 border-secondary-color"
+            class="flex-1 bg-card p-8 rounded-2xl shadow-xl border-t-4 border-secondary-color transition hover:scale-[1.02] duration-300"
           >
-            <p class="text-xl italic text-muted-color mb-4 leading-relaxed">
-              "Alex's ability to simplify complex technical challenges is
+            <p class="text-lg italic text-muted-color mb-6 leading-relaxed">
+              “Alex’s ability to simplify complex technical challenges is
               unmatched. The project was delivered ahead of schedule and
-              exceeded all performance metrics."
+              exceeded all metrics.”
             </p>
-            <div class="font-semibold text-default-color">
-              - Jane Doe, CTO at Innovatech
+            <div class="flex items-center gap-4">
+              <img
+                src="https://via.placeholder.com/60"
+                alt="Jane Doe"
+                class="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-semibold text-default-color">Jane Doe</p>
+                <p class="text-sm text-muted-color">CTO at Innovatech</p>
+              </div>
             </div>
           </div>
 
           <!-- Testimonial 2 -->
           <div
-            class="bg-card p-8 rounded-xl shadow-xl border-t-4 border-secondary-color"
+            class="flex-1 bg-card p-8 rounded-2xl shadow-xl border-t-4 border-secondary-color transition hover:scale-[1.02] duration-300"
           >
-            <p class="text-xl italic text-muted-color mb-4 leading-relaxed">
-              "The user interface he designed was intuitive and beautiful. He
-              truly understands modern web aesthetics and accessibility."
+            <p class="text-lg italic text-muted-color mb-6 leading-relaxed">
+              “The interface he designed was beautiful and intuitive. Alex truly
+              understands modern design and accessibility.”
             </p>
-            <div class="font-semibold text-default-color">
-              - Mark Chen, Lead UX Designer
+            <div class="flex items-center gap-4">
+              <img
+                src="https://via.placeholder.com/60"
+                alt="Mark Chen"
+                class="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <p class="font-semibold text-default-color">Mark Chen</p>
+                <p class="text-sm text-muted-color">Lead UX Designer</p>
+              </div>
             </div>
           </div>
         </div>
@@ -700,6 +738,17 @@
             behavior: "smooth",
           });
         });
+      });
+
+      const carousel = document.getElementById("projects-carousel");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      prevBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: -carousel.clientWidth, behavior: "smooth" });
+      });
+      nextBtn.addEventListener("click", () => {
+        carousel.scrollBy({ left: carousel.clientWidth, behavior: "smooth" });
       });
     </script>
   </body>
