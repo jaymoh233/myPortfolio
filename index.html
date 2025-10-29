@@ -152,6 +152,12 @@
               class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
               >About</a
             >
+
+            <a
+              href="#experience"
+              class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
+              >Experience</a
+            >
             <a
               href="#skills"
               class="text-muted-color hover:bg-card px-3 py-2 rounded-md text-sm font-medium transition"
@@ -242,7 +248,7 @@
       class="container mx-auto px-6 sm:px-6 lg:px-8 mt-0 py-12 space-y-24 md:space-y-32"
     >
       <!-- 1. About Me / Hero Section -->
-      <section id="about" class="pt-0 md:pt-10 pb-20 fade-in-section">
+      <section id="about" class="pt-10 md:pt-10 pb-20 fade-in-section">
         <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
           <div class="md:w-1/2 order-2 md:order-1 text-center md:text-left">
             <p class="text-primary-color font-semibold mb-2">Hello, I'm</p>
@@ -280,131 +286,270 @@
         </div>
       </section>
 
+      <section id="experience" class="py-16 fade-in-section">
+        <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
+          Professional Journey
+        </h2>
+
+        <div class="relative max-w-4xl mx-auto">
+          <div
+            class="absolute left-3 md:left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[var(--border-color)] hidden md:block"
+          ></div>
+
+          <div
+            class="mb-10 flex flex-col md:flex-row justify-between items-start w-full"
+          >
+            <div class="md:w-5/12 text-left md:text-right mb-4 md:mb-0">
+              <div class="text-xl font-bold text-default-color">
+                Full-Stack Developer
+              </div>
+              <div class="text-secondary-color font-semibold">
+                Volta River Authority (VRA)
+              </div>
+              <p class="text-sm text-muted-color">
+                Nov 2024 – Sept 2025 | National Service
+              </p>
+            </div>
+
+            <div class="md:w-1/12 flex justify-center md:items-start relative">
+              <div
+                class="w-6 h-6 bg-primary-color rounded-full border-4 border-[var(--bg-base)] absolute md:relative -left-0.5"
+              ></div>
+            </div>
+
+            <div
+              class="md:w-5/12 bg-card p-6 rounded-lg shadow-lg transition hover:shadow-xl hover:scale-[1.01] duration-300 ml-6 md:ml-0"
+            >
+              <ul class="list-disc space-y-2 text-default-color pl-5">
+                <li>
+                  Implemented an **LLM-powered internal assistant** using
+                  **Python** and **LangChain/OpenAI**, enhancing employee access
+                  to organizational knowledge and improving support efficiency.
+                  <a href="#" class="text-primary-color text-sm hover:underline"
+                    >Click here to view project</a
+                  >
+                </li>
+                <li>
+                  Contributed to the development of a **Project Register
+                  application** (C#, ASP.NET MVC, MS SQL) which streamlined
+                  project tracking, **boosting oversight and productivity by
+                  50%**.
+                </li>
+                <li>
+                  Supported Business Data Analytics by cleaning and organizing
+                  **engineering and operational data** for processing, utilizing
+                  Microsoft Excel and Word.
+                </li>
+                <li>
+                  Key Technologies: **Python**, **LangChain**, **C#**, **.NET
+                  MVC**, **MS SQL**.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="mb-10 flex flex-col md:flex-row justify-between items-start w-full md:flex-row-reverse"
+          >
+            <div class="md:w-5/12 text-left md:text-left mb-4 md:mb-0">
+              <div class="text-xl font-bold text-default-color">
+                IT Support Technician
+              </div>
+              <div class="text-secondary-color font-semibold">
+                Volta River Authority (VRA)
+              </div>
+              <p class="text-sm text-muted-color">
+                Jul 10, 2023 – Aug 31, 2023 | Internship
+              </p>
+            </div>
+
+            <div class="md:w-1/12 flex justify-center md:items-start relative">
+              <div
+                class="w-6 h-6 bg-primary-color rounded-full border-4 border-[var(--bg-base)] absolute md:relative -left-0.5"
+              ></div>
+            </div>
+
+            <div
+              class="md:w-5/12 bg-card p-6 rounded-lg shadow-lg transition hover:shadow-xl hover:scale-[1.01] duration-300 ml-6 md:ml-0"
+            >
+              <ul class="list-disc space-y-2 text-default-color pl-5">
+                <li>
+                  Troubleshot and resolved employee **network issues** for the
+                  Networking Department, contributing to a **45% improvement in
+                  employee productivity** by reducing technical downtime.
+                </li>
+                <li>
+                  Managed telephone setups across multiple departments and
+                  presented research on core **networking concepts** to bolster
+                  team knowledge.
+                </li>
+                <li>
+                  Demonstrated ability to **handle tasks independently** and
+                  efficiently under pressure.
+                </li>
+                <li>
+                  Key Skills: **Network Troubleshooting**, **Technical
+                  Support**, **Independent Task Management**.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 2. Skills Section -->
       <section id="skills" class="py-16 fade-in-section">
         <h2 class="text-4xl font-bold text-center mb-12 text-primary-color">
-          My Expertise
+          My Technical Expertise
         </h2>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          <!-- Skill Card 1: HTML/CSS -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="layout-grid"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:rotate-12 transition duration-500"
-            ></i>
-            <p class="font-semibold text-default-color">HTML/CSS</p>
-            <p class="text-sm text-muted-color">Structure & Style</p>
+        <div class="grid grid-cols-1 gap-10 max-w-5xl mx-auto">
+          <div>
+            <h3
+              class="text-2xl font-semibold mb-6 border-b border-[var(--border-color)] pb-2 text-default-color"
+            >
+              Backend & Core Languages
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="server"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">C# / .NET</p>
+                <p class="text-xs text-muted-color">
+                  Framework/Core, ASP.NET MVC
+                </p>
+              </div>
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="terminal"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">Python</p>
+                <p class="text-xs text-muted-color">Backend & Scripting</p>
+              </div>
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="server"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">Node.js</p>
+                <p class="text-xs text-muted-color">Runtime</p>
+              </div>
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="code"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">Java</p>
+                <p class="text-xs text-muted-color">Core Concepts</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Skill Card 2: JavaScript -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="code"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:rotate-12 transition duration-500"
-            ></i>
-            <p class="font-semibold text-default-color">JavaScript</p>
-            <p class="text-sm text-muted-color">Core Logic</p>
+          <div>
+            <h3
+              class="text-2xl font-semibold mb-6 border-b border-[var(--border-color)] pb-2 text-default-color"
+            >
+              Frontend & Client-Side
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="layout-grid"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">HTML/CSS</p>
+                <p class="text-xs text-muted-color">
+                  Semantic Markup & Styling
+                </p>
+              </div>
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="code"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">JavaScript</p>
+                <p class="text-xs text-muted-color">Core Logic & DOM</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Skill Card 3: C# / .NET -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="server"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-spin"
-            ></i>
-            <p class="font-semibold text-default-color">C# / .NET</p>
-            <p class="text-sm text-muted-color">ASP.NET MVC</p>
+          <div>
+            <h3
+              class="text-2xl font-semibold mb-6 border-b border-[var(--border-color)] pb-2 text-default-color"
+            >
+              Specialization: AI / LLMs
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="brain"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">
+                  LangChain / AI Dev
+                </p>
+                <p class="text-xs text-muted-color">RAG, LLM Integration</p>
+              </div>
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="message-square"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">
+                  Prompt Engineering
+                </p>
+                <p class="text-xs text-muted-color">OpenAI, Custom Models</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Skill Card 4: Node.js -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="server"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:scale-110 transition duration-500"
-            ></i>
-            <p class="font-semibold text-default-color">Node.js</p>
-            <p class="text-sm text-muted-color">Backend Runtime</p>
-          </div>
-
-          <!-- Skill Card 5: Databases -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="database"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color"
-            ></i>
-            <p class="font-semibold text-default-color">MS SQL Server</p>
-            <p class="text-sm text-muted-color">Data Management</p>
-          </div>
-
-          <!-- Skill Card 6: Python -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="terminal"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-pulse"
-            ></i>
-            <p class="font-semibold text-default-color">Python</p>
-            <p class="text-sm text-muted-color">LangChain/AI Dev</p>
-          </div>
-
-          <!-- Skill Card 7: GitHub -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="git-branch"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-pulse"
-            ></i>
-            <p class="font-semibold text-default-color">Git/GitHub</p>
-            <p class="text-sm text-muted-color">Version Control</p>
-          </div>
-
-          <!-- Skill Card 8: Prompt Engineering -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="brain"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-pulse"
-            ></i>
-            <p class="font-semibold text-default-color">Prompt Engineering</p>
-            <p class="text-sm text-muted-color">LLMs (e.g., ChatGPT)</p>
-          </div>
-
-          <!-- Skill Card 9: Java -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="code"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-pulse"
-            ></i>
-            <p class="font-semibold text-default-color">Java</p>
-            <p class="text-sm text-muted-color">Core Java Concepts</p>
-          </div>
-
-          <!-- Skill Card 8: Public Speaking -->
-          <div
-            class="p-6 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
-          >
-            <i
-              data-lucide="mic"
-              class="w-8 h-8 mx-auto mb-3 text-secondary-color group-hover:animate-pulse"
-            ></i>
-            <p class="font-semibold text-default-color">Public Speaking</p>
-            <p class="text-sm text-muted-color">Confident Communication</p>
+          <div>
+            <h3
+              class="text-2xl font-semibold mb-6 border-b border-[var(--border-color)] pb-2 text-default-color"
+            >
+              Databases & Development Tools
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="database"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">MS SQL Server</p>
+                <p class="text-xs text-muted-color">Relational Data</p>
+              </div>
+              <div
+                class="p-5 bg-card rounded-xl shadow-xl hover:bg-card-hover transition duration-300 transform hover:scale-[1.02] text-center group"
+              >
+                <i
+                  data-lucide="git-branch"
+                  class="w-7 h-7 mx-auto mb-2 text-secondary-color"
+                ></i>
+                <p class="font-semibold text-default-color">Git/GitHub</p>
+                <p class="text-xs text-muted-color">Version Control</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -416,12 +561,10 @@
         </h2>
 
         <div class="relative max-w-7xl mx-auto">
-          <!-- Carousel Wrapper -->
           <div
             id="projects-carousel"
             class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-4"
           >
-            <!-- Project Card 1 -->
             <div
               class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
             >
@@ -439,30 +582,33 @@
                 Provides personalized Ghanaian fashion suggestions that promote
                 cultural identity and help users dress confidently.
               </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >Live Demo</span
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
                 >
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >GitHub</span
+                  <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
+                  Live Demo
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
                 >
-                <!-- <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >Tailwind CSS</span
-                > -->
+                  <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                  GitHub Repo
+                </a>
               </div>
             </div>
 
-            <!-- Project Card 2 -->
             <div
               class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
             >
               <div class="h-48 mb-4 rounded-lg overflow-hidden">
                 <img
                   src="img/Nature's Nook.JPG"
-                  alt="Data Visualization Dashboard"
+                  alt="Nature's Nook: Eco-Friendly Plants Marketplace"
                   class="object-cover w-full h-full"
                 />
               </div>
@@ -474,23 +620,26 @@
                 purchase the best plants, offering a seamless and engaging
                 shopping experience.
               </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >Live Demo</span
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
                 >
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >GitHub</span
+                  <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
+                  Live Demo
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
                 >
-                <!-- <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >TypeScript</span
-                > -->
+                  <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                  GitHub Repo
+                </a>
               </div>
             </div>
 
-            <!-- Project Card 3 -->
             <div
               class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
             >
@@ -508,24 +657,27 @@
                 Scalable cart and checkout microservice using Flask and
                 Kubernetes.
               </p>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >Python</span
+              <div class="flex flex-wrap gap-3 mt-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
                 >
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >Flask</span
+                  <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
+                  Demo/Write-up
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
                 >
-                <span
-                  class="text-xs font-medium bg-blue-900 text-blue-300 px-4 py-2 rounded-full"
-                  >Kubernetes</span
-                >
+                  <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                  GitHub Repo
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- Navigation Buttons (Desktop only) -->
           <button
             id="prevBtn"
             class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg transition"
