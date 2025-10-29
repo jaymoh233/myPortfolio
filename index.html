@@ -24,6 +24,7 @@
         --text-default: #f1f5f9; /* Slate 100 (Primary text) */
         --text-muted: #94a3b8; /* Slate 400 (Secondary text) */
         --border-color: #334155; /* Slate 700 (Borders) */
+        --menu-bg: #1a1a1a;
       }
 
       /* LIGHT MODE OVERRIDES */
@@ -35,6 +36,7 @@
         --text-default: #1e293b; /* Slate 800 (Primary text) */
         --text-muted: #475569; /* Slate 600 (Secondary text) */
         --border-color: #e2e8f0; /* Slate 200 (Borders) */
+        --menu-bg: #ffffff;
       }
 
       body {
@@ -62,6 +64,20 @@
           var(--bg-card) 90%,
           var(--bg-base)
         );
+      }
+
+      #mobile-menu {
+        position: fixed !important;
+        top: 64px; /* same as header height (16 * 4px) */
+        background-color: var(--bg-base);
+        left: 0;
+        right: 0;
+        z-index: 9999;
+      }
+
+      #mobile-menu.hidden {
+        transform: translateY(-10px);
+        opacity: 0;
       }
 
       /* Apply variables to text/icon colors */
@@ -211,7 +227,10 @@
       </nav>
 
       <!-- Mobile Menu (Hidden by default) -->
-      <div class="hidden md:hidden bg-base" id="mobile-menu">
+      <div
+        class="hidden md:hidden bg-white w-full top-16 z-40"
+        id="mobile-menu"
+      >
         <div
           class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[var(--border-color)]"
         >
@@ -220,6 +239,13 @@
             class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
             >About</a
           >
+
+          <a
+            href="#experience"
+            class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
+            >Experience</a
+          >
+
           <a
             href="#skills"
             class="block px-3 py-2 rounded-md text-base font-medium text-default-color hover:bg-card transition"
