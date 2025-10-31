@@ -662,13 +662,13 @@
           Recent Projects
         </h2>
 
-        <div class="relative max-w-7xl mx-auto">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
           <div
             id="projects-carousel"
-            class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-4"
+            class="flex space-x-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide pb-4 **items-stretch**"
           >
             <div
-              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
+              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center **flex flex-col h-full**"
             >
               <div class="h-48 mb-4 rounded-lg overflow-hidden">
                 <img
@@ -677,35 +677,42 @@
                   class="object-cover w-full h-full"
                 />
               </div>
-              <h3 class="text-xl font-bold mb-2 text-default-color">
-                FashionHub: AI-Powered Fashion Recommendation
-              </h3>
-              <p class="text-muted-color mb-4 text-sm">
-                Provides personalized Ghanaian fashion suggestions that promote
-                cultural identity and help users dress confidently.
-              </p>
-              <div class="flex flex-wrap gap-3 mt-4">
-                <a
-                  href="https://fashionn-hubb.vercel.app/"
-                  target="_blank"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
-                >
-                  <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
-                  Live Demo
-                </a>
-                <a
-                  href="https://github.com/jaymoh233/FashionHub"
-                  target="_blank"
-                  class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
-                >
-                  <i data-lucide="github" class="w-4 h-4 mr-2"></i>
-                  GitHub Repo
-                </a>
+
+              <div class="**flex flex-col justify-between h-full**">
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-default-color">
+                    FashionHub: AI-Powered Fashion Recommendation
+                  </h3>
+                  <p class="text-muted-color mb-4 text-sm">
+                    Provides personalized Ghanaian fashion suggestions that
+                    promote cultural identity and help users dress confidently.
+                    This project uses complex ML models for accurate
+                    recommendations and has a slightly longer description here.
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-3 mt-4">
+                  <a
+                    href="https://fashionn-hubb.vercel.app/"
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
+                  >
+                    <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
+                    Live Demo
+                  </a>
+                  <a
+                    href="https://github.com/jaymoh233/FashionHub"
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
+                  >
+                    <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                    GitHub Repo
+                  </a>
+                </div>
               </div>
             </div>
 
             <div
-              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
+              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center **flex flex-col h-full**"
             >
               <div class="h-48 mb-4 rounded-lg overflow-hidden">
                 <img
@@ -714,36 +721,40 @@
                   class="object-cover w-full h-full"
                 />
               </div>
-              <h3 class="text-xl font-bold mb-2 text-default-color">
-                Nature's Nook: Eco-Friendly Plants Marketplace
-              </h3>
-              <p class="text-muted-color mb-4 text-sm">
-                An online plant store where customers can easily browse and
-                purchase the best plants, offering a seamless and engaging
-                shopping experience.
-              </p>
-              <div class="flex flex-wrap gap-3 mt-4">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
-                >
-                  <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
-                  Live Demo
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
-                >
-                  <i data-lucide="github" class="w-4 h-4 mr-2"></i>
-                  GitHub Repo
-                </a>
+
+              <div class="**flex flex-col justify-between h-full**">
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-default-color">
+                    Nature's Nook: Eco-Friendly Plants Marketplace
+                  </h3>
+                  <p class="text-muted-color mb-4 text-sm">
+                    An online plant store offering a seamless shopping
+                    experience.
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-3 mt-4">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
+                  >
+                    <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
+                    Live Demo
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
+                  >
+                    <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                    GitHub Repo
+                  </a>
+                </div>
               </div>
             </div>
 
             <div
-              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center"
+              class="min-w-[90%] sm:min-w-[70%] md:min-w-[45%] lg:min-w-[32%] bg-card p-6 rounded-xl shadow-xl snap-center **flex flex-col h-full**"
             >
               <div class="h-48 mb-4 rounded-lg overflow-hidden">
                 <img
@@ -752,45 +763,50 @@
                   class="object-cover w-full h-full"
                 />
               </div>
-              <h3 class="text-xl font-bold mb-2 text-default-color">
-                E-commerce Microservice
-              </h3>
-              <p class="text-muted-color mb-4 text-sm">
-                Scalable cart and checkout microservice using Flask and
-                Kubernetes.
-              </p>
-              <div class="flex flex-wrap gap-3 mt-4">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
-                >
-                  <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
-                  Demo/Write-up
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
-                >
-                  <i data-lucide="github" class="w-4 h-4 mr-2"></i>
-                  GitHub Repo
-                </a>
+
+              <div class="**flex flex-col justify-between h-full**">
+                <div>
+                  <h3 class="text-xl font-bold mb-2 text-default-color">
+                    E-commerce Microservice
+                  </h3>
+                  <p class="text-muted-color mb-4 text-sm">
+                    Scalable cart and checkout microservice using Flask and
+                    Kubernetes.
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-3 mt-4">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition duration-300 shadow-md"
+                  >
+                    <i data-lucide="monitor" class="w-4 h-4 mr-2"></i>
+                    Demo/Write-up
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="inline-flex items-center px-4 py-2 border border-[var(--border-color)] text-sm font-medium rounded-lg text-default-color bg-bg-card hover:bg-card-hover transition duration-300 shadow-md"
+                  >
+                    <i data-lucide="github" class="w-4 h-4 mr-2"></i>
+                    GitHub Repo
+                  </a>
+                </div>
               </div>
             </div>
           </div>
 
           <button
             id="prevBtn"
-            class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg transition"
+            class="hidden lg:flex absolute left-0 top-1/2 transform -translate-y-1/2 -ml-12 p-3 bg-card rounded-full shadow-lg text-primary-color hover:bg-card-hover transition duration-300 z-10"
           >
-            ❮
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
           </button>
           <button
             id="nextBtn"
-            class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 bg-blue-700 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg transition"
+            class="hidden lg:flex absolute right-0 top-1/2 transform -translate-y-1/2 -mr-12 p-3 bg-card rounded-full shadow-lg text-primary-color hover:bg-card-hover transition duration-300 z-10"
           >
-            ❯
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
           </button>
         </div>
       </section>
